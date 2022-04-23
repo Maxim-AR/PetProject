@@ -1,0 +1,19 @@
+.mainContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    padding: 20px;
+    margin: 10px;
+}
+.child {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+}
+
+
+.restButtonsContainer {
+    color: aqua;
+}
