@@ -2,7 +2,7 @@ import React from 'react';
 import { Post } from '../Post';
 import backImg from '../../../public/assets/svg/blue.jpg'
 
-export const List = ({ list }) => {
+export const List = ({ list, favorites, setFavorites }) => {
     return (
         <div style={{
             backgroundImage: `url(${backImg})` ,
@@ -14,7 +14,7 @@ export const List = ({ list }) => {
             width: '100%',
         }} sx={{ minWidth: 275 }} >
             {list?.map((item, i) => (
-                <Post key={i} itemPost={item} />
+                <Post key={i} itemPost={item} isInFavorites={favorites?.includes(item._id)} setFavorites={setFavorites} />
             ))}
         </div>
     );

@@ -14,6 +14,7 @@ import { Info } from './components/Info';
 export const App = () => {
     const [postList, setFoodList] = useState(null);
     const [user, setUser] = useState(null);
+    const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem('favorites')) || []);
     
 
     useEffect(()=> {
@@ -30,7 +31,7 @@ export const App = () => {
                 <Logo />
                 <Info  name={user?.name}  />
             </Header>
-            <List list={postList} />
+            <List list={postList} favorites={favorites} setFavorites={setFavorites} />
             <Footer />
         </div>
     );
