@@ -17,3 +17,17 @@
 .restButtonsContainer {
     color: aqua;
 }
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+
+}
+.header__logo {
+    height: 30px;
+}
+a {
+    text-decoration: none;
+    color: #213053;
+}
