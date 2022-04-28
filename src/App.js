@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import mockedData from '../data.json';
+
 import api from './utils/api';
 
 import { Footer } from './components/Footer';
@@ -35,7 +35,7 @@ export const App = () => {
             <div>
                 <Routes>
                     <Route path="/" element={<List list={postList} favorites={favorites} setFavorites={setFavorites} />} />
-                    <Route path="post/:itemId" element={<OnePost changeList={setPostList} />} />
+                    <Route path="post/:itemID" element={<OnePost changeList={setPostList}  />} />
                     <Route path="about" element={<div>PAGE ABOUT</div>} />
                 </Routes>
             </div>

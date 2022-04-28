@@ -60,6 +60,7 @@ export const Post = ({ itemPost, isInFavorites, setFavorites }) => {
 
 
   return (
+    <div >
     <Card style={{ margin: '20px', width: '50px' }} sx={{ minWidth: 275 }}>
       <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
@@ -91,5 +92,6 @@ export const Post = ({ itemPost, isInFavorites, setFavorites }) => {
         )}
       </CardActions>
     </Card>
+    </div>
   );
 };
