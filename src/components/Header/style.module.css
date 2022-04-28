@@ -1,33 +1,11 @@
-.mainContainer {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    align-items: center;
-    padding: 20px;
-    margin: 10px;
-}
-.child {
+ .child {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-  
-}
-
-
-.restButtonsContainer {
-    color: aqua;
-}
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-
-}
-.header__logo {
-    height: 30px;
+    justify-content: space-around;
+    padding: 10px;
+    width: 100vh;
 }
 a {
     text-decoration: none;
     color: #213053;
-}
+}  

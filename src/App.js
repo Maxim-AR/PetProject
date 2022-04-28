@@ -11,6 +11,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import {OnePost} from './components/OnePost'
 import './index.css';
 import { Info } from './components/Info';
+import { ButtonNewPost } from './components/Button';
 
 export const App = () => {
     const [postList, setPostList] = useState(null);
@@ -31,6 +32,7 @@ export const App = () => {
             <Header>
                 <Logo />
                 <Info name={user?.name} />
+                <ButtonNewPost />
             </Header>
             <div>
                 <Routes>
