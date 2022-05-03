@@ -1,10 +1,14 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import userContext from '../contexts/userContext';
 
-export const Info = ({ name }) => {
+
+export const Info = () => {
+    const {user, setUser} = useContext(userContext)
+   
     return (
         <div>
             
-            <div> Приветствую тебя {name} ! </div>
+            <div> Приветствую тебя {user?.name} ! </div>
         </div>
     );
 };

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -11,11 +11,16 @@ import CardMedia from '@mui/material/CardMedia';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import { Link } from 'react-router-dom';
 import api from '../../utils/api';
+import userContext from '../contexts/userContext';
+import postContext from '../contexts/postContext';
 
 
 export const Post = ({ itemPost, isInFavorites, setFavorites }) => {
 
   const [liked, setLiked] = useState(itemPost.likes.length);
+ 
+  const {user, setUser} = useContext(userContext)
+  const {postList, setPostList} = useContext(postContext)
 
   const writeLS = (key, value) => {
     const storage = JSON.parse(localStorage.getItem(key)) || [];
@@ -53,7 +58,9 @@ export const Post = ({ itemPost, isInFavorites, setFavorites }) => {
     api
       .deletePosts(itemPost._id)
       .then((res) => {
-        document.location.reload();
+        setPostList((prevState) => {
+          return prevState.filter((item) => item._id !== itemPost._id)
+        })
       })
       .catch((err) => alert(err));
   };
@@ -80,7 +87,7 @@ export const Post = ({ itemPost, isInFavorites, setFavorites }) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" onClick={deletePost}>Delete</Button>
+        {(user?._id == itemPost?.author._id) &&  (<Button size="small" onClick={deletePost}>Delete</Button>)}
         {isInFavorites ? (
           <IconButton aria-label='add to favorites' onClick={removeFavorite}>
             <FavoriteIcon  />{liked}

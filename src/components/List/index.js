@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { Post } from '../Post';
-import backImg from '../../../public/assets/svg/blue.jpg'
+import backImg from '../../../public/assets/svg/fone.jpg'
+import postContext from '../contexts/postContext';
 
-export const List = ({ list, favorites, setFavorites }) => {
+export const List = ({  favorites, setFavorites }) => {
+    const {postList, setPostList} = useContext(postContext)
     return (
         <div style={{
             backgroundImage: `url(${backImg})` ,
@@ -13,8 +15,8 @@ export const List = ({ list, favorites, setFavorites }) => {
             justifyContent:"space-between",
             width: '100%',
         }} sx={{ minWidth: 275 }} >
-            {list?.map((item, i) => (
-                <Post key={i} itemPost={item} isInFavorites={favorites?.includes(item._id)} setFavorites={setFavorites} />
+            {postList?.map((item, i) => (
+                <Post key={i} itemPost={item} isInFavorites={favorites?.includes(item._id)} setFavorites={setFavorites}  />
             ))}
         </div>
     );
