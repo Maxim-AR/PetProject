@@ -64,7 +64,14 @@ class Api {
             },
             body: JSON.stringify(post)
           }).then(onResponce) 
-    }  
+    } 
+    getSearch(query){
+        return fetch(`${this._url}/posts/search/?query=${query}`, {
+          headers: {
+            authorization: `Bearer ${this._token}`,
+          },
+        }).then(onResponce);
+    }     
   
 
 }

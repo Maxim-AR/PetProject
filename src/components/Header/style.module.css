@@ -1,8 +1,12 @@
  .child {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
     align-items: center;
-    justify-content: space-around;
+    justify-items: stretch;
     padding: 10px;
+    margin-left: 30px;
+    grid-gap: 20px;
+    background-color: crimson;
     
 }
 a {

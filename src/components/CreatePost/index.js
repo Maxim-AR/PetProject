@@ -9,15 +9,16 @@ export const CreatePost = () => {
     const handleSubmit = (event) => {
         event.preventDefault()
         const {
-            target: { inputTitle, inputText }, }
+            target: { inputImage, inputTitle, inputText }, }
             = event;
         api.createPost({
+            image: inputImage.value,
             title: inputTitle.value,
             text: inputText.value,
 
         }).then(data => {
             setPostList((prevState) => {
-                return [...prevState, data]
+                return [data, ...prevState]
             })
             navigate('/')
         }).catch(err => alert(err))
@@ -27,6 +28,9 @@ export const CreatePost = () => {
             <Grid container flexDirection='column' spaicing='10'>
                 <Grid item>
                     <Typography variant='h3' color="text.secondary">Создать пост </Typography>
+                </Grid>
+                <Grid item>
+                    <TextField fullWidth name='inputImage' label="Ссылка на картинку" variant="outlined" />
                 </Grid>
                 <Grid item>
                     <TextField fullWidth name='inputTitle' label="Название поста" variant="outlined" />

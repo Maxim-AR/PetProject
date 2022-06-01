@@ -1,11 +1,16 @@
 .logo {
     width: 70px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace, sans-serif;
     font-size: 30px;
     color: #213053;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-left: 50px;
     
     
 }
 img {
     width: 70px;
+    
 }

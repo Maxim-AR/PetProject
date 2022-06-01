@@ -71,7 +71,7 @@ export const Post = ({ itemPost, isInFavorites, setFavorites }) => {
     <Card style={{ margin: '20px', width: '50px' }} sx={{ minWidth: 275 }}>
       <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-          <Link to={`post/${itemPost._id}`}> <CardMedia component='img' image ={itemPost?.author.avatar} alt={itemPost.name} /> </Link>
+          <Link to={`post/${itemPost._id}`}> <CardMedia component='img' image ={itemPost?.image} alt={itemPost.name} /> </Link>
         </Typography>
         <Typography variant="h5" component="div">
           {itemPost.author.name}
